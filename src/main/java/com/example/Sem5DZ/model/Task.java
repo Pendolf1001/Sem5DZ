@@ -18,16 +18,20 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
 
-    @Column( nullable=false)
+    @Column( name="description", nullable=false)
     private String description;
 
 
 
-    @Column( nullable=false)
+    @Column( name="status",  nullable=false)
+    @Enumerated(EnumType.STRING)
     private TaskStatus status;
 
+//    @Column( name="status",  nullable=false)
+//    private String status;
 
-    @Column( nullable=false)
+
+    @Column( name="created_at", nullable=false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 }

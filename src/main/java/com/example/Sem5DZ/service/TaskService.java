@@ -5,7 +5,6 @@ import com.example.Sem5DZ.model.TaskStatus;
 import com.example.Sem5DZ.repository.TaskRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -43,17 +42,17 @@ public class TaskService {
     }
 
 
-    public List<Task> updateTask(Long id, Task taskDetails) {
+    public void taskUpdateStatus(Long id, Task taskDetails) {
 
         Optional<Task> optionalTask = repositoty.findById(id);
 
         if (optionalTask.isPresent()) {
             Task task = optionalTask.get();
-            task.setDescription(taskDetails.getDescription());
+            task.setStatus(taskDetails.getStatus());
 
 
             repositoty.save(task);
-            return repositoty.findAll();
+
         } else {
             throw new IllegalArgumentException("Task not found with id : " + id);
         }

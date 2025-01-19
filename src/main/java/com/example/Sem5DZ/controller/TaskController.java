@@ -36,5 +36,12 @@ public class TaskController {
     }
 
 
+    @PutMapping ("/{id}")
+    public void taskUpdateStatus(@PathVariable Long id, @RequestBody Task task){
+        taskService.taskUpdateStatus(id, task);
+
+
+    }
+
 
 }

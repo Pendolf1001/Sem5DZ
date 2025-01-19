@@ -1,9 +1,11 @@
 package com.example.Sem5DZ.service;
 
 import com.example.Sem5DZ.model.Task;
+import com.example.Sem5DZ.model.TaskStatus;
 import com.example.Sem5DZ.repository.TaskRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,6 +35,11 @@ public class TaskService {
     public List<Task> createTask(Task task) {
         repositoty.save(task);
         return repositoty.findAll();
+    }
+
+
+    public List<Task> getTaskByStatus(TaskStatus status){
+        return  repositoty.getTaskByStatus(status);
     }
 
 

@@ -27,8 +27,7 @@ public class Task {
     @Enumerated(EnumType.STRING)
     private TaskStatus status;
 
-//    @Column( name="status",  nullable=false)
-//    private String status;
+
 
 
     @Column( name="created_at", nullable=false)

@@ -1,6 +1,7 @@
 package com.example.Sem5DZ.controller;
 
 import com.example.Sem5DZ.model.Task;
+import com.example.Sem5DZ.model.TaskStatus;
 import com.example.Sem5DZ.service.TaskService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,12 @@ public class TaskController {
        taskService.createTask(task);
 
     }
+
+    @GetMapping ("/status/{status}")
+    public List<Task> getTaskByStatus(@PathVariable TaskStatus status){
+        return  taskService.getTaskByStatus(status);
+    }
+
 
 
 }

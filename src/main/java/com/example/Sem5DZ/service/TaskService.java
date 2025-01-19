@@ -60,4 +60,9 @@ public class TaskService {
 
     }
 
+
+    public void deleteTask(Long id){
+        repositoty.deleteById(id);
+    }
+
 }

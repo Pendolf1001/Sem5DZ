@@ -23,6 +23,11 @@ public class TaskController {
         return  taskService.getAllTask();
     }
 
+    @GetMapping("/hello")
+    public String hello(){
+        return "Hello from  Tasks";
+    }
+
 
     @PostMapping
     public void transferMoney(@RequestBody Task task){
